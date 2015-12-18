@@ -4,7 +4,7 @@
   template: src=issue.net.j2 dest=/etc/issue.net
   sudo: True
 - name: update sshd config to set banner
-  lineinfile: dest=/etc/selinux/config regexp=^Banner line=Banner /etc/issue.net
+  lineinfile: dest=/etc/ssh/sshd_config regexp=^Banner line=Banner /etc/issue.net
   sudo: True
   notify: restart sshd
 - name: set motd
