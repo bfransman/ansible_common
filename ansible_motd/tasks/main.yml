@@ -1,0 +1,12 @@
+---
+# tasks file for ansible_motd
+- name: set ssh banner
+  template: src=issue.net.j2 dest=/etc/issue.net
+  sudo: True
+- name: update sshd config to set banner
+  lineinfile: dest=/etc/selinux/config regexp=^Banner line=Banner /etc/issue.net
+  sudo: True
+  notify: restart sshd
+- name: set motd
+  template: src=motd.j2 dest=/etc/motd
+  sudo: True
