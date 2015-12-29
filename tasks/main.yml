@@ -1,3 +1,4 @@
 ---
 - include: motd.yml
 - include: sshd.yml
+- include: sudoers.yml
