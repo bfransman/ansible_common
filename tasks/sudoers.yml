@@ -1,4 +1,5 @@
 ---
+# See: http://docs.ansible.com/ansible/intro_configuration.html#pipelining
 - name: Set a sudoers file to disable tty
   template: >
     src=disable-requiretty.j2
